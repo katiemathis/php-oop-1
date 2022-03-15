@@ -13,7 +13,7 @@
         }
 
         public function getNomeAnno(){
-            $this->nome . ' ' . $this->anno;
+            return $this->nome . ' <h3> (' . $this->anno . ') </h3>';
         }
 
         public function setGenere($genere) {
@@ -30,8 +30,19 @@
     $whileYouWereSleeping->attoreSecondario = 'Bill Pullman';
     $whileYouWereSleeping->setGenere('Romantic Comedy');
 
-    echo "<h1>" . $whileYouWereSleeping->nome . "</h1>";
-    echo "<h3> (". $whileYouWereSleeping->anno . ") </h3>";
+    echo "<h1>" . $whileYouWereSleeping->getNomeAnno() . "</h1>";
+    //echo "<h3> (". $whileYouWereSleeping->anno . ") </h3>";
     echo "<p> The leading actor is: " . $whileYouWereSleeping->attorePrincipale . "</p>";
     echo "<p> The supporting actor is: " . $whileYouWereSleeping->attoreSecondario. "</p>";
     echo "<p> The genre is: " . $whileYouWereSleeping->getGenere(). "</p>";
+
+    $theNet = new Movie('The Net', '1995');
+    $theNet->attorePrincipale = 'Sandra Bullock';
+    $theNet->attoreSecondario = 'Jeremy Northam';
+    $theNet->setGenere('Thriller');
+
+    echo "<h1>" . $theNet->getNomeAnno() . "</h1>";
+    //echo "<h3> (". $theNet->anno . ") </h3>";
+    echo "<p> The leading actor is: " . $theNet->attorePrincipale . "</p>";
+    echo "<p> The supporting actor is: " . $theNet->attoreSecondario. "</p>";
+    echo "<p> The genre is: " . $theNet->getGenere(). "</p>";
